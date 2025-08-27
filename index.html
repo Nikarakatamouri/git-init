@@ -3,72 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BoltDev | Home</title>
+  <title>BoltDev</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-
   <!-- NAVBAR -->
-  <nav class="navbar transparent" id="navbar">
+  <header id="navbar" class="navbar transparent">
     <div class="logo">
-      <img src="assets/boltdev-logo-colored.png" alt="BoltDev Logo" class="logo-img logo-colored">
-      <img src="assets/boltdev-logo-black.png" alt="BoltDev Logo Black" class="logo-img logo-black">
+      <img src="assets/boltdev-logo-white.svg" alt="BoltDev Logo White" class="logo-img logo-white">
+      <img src="assets/boltdev-logo.svg" alt="BoltDev Logo Colored" class="logo-img logo-colored">
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
     <a href="contact.html" class="cta-btn">Get Started</a>
-  </nav>
+  </header>
 
   <!-- HERO -->
-<section class="hero" style="background-image: url('assets/backround hero.avif');">
-  <div class="hero-content">
-    <h1>Bold Websites for Bold Businesses</h1>
-    <p>We help small businesses in the USA go online fast, affordably, and professionally.</p>
-    <a href="services.html" class="cta-btn">View Plans</a>
-  </div>
-</section>
-
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Bold Websites for Bold Businesses</h1>
+      <p>We help small businesses in the USA go online fast, affordably, and professionally.</p>
+      <a href="services.html" class="cta-btn">View Plans</a>
+    </div>
+  </section>
 
   <!-- WHY CHOOSE US -->
-  <section class="intro fade-in">
-    <div class="container">
-      <h2>Why Choose BoltDev?</h2>
-      <p>We are committed to delivering exceptional service and value to our clients.</p>
-      <div class="features-grid">
-        <div class="feature">
-          <h3>⚡ Fast</h3>
-          <p>Quick turnaround times to get your business online swiftly.</p>
-        </div>
-        <div class="feature">
-          <h3>💰 Affordable</h3>
-          <p>Competitive pricing to fit your budget without compromising quality.</p>
-        </div>
-        <div class="feature">
-          <h3>🎯 Professional</h3>
-          <p>Expert web design and development for a polished online presence.</p>
-        </div>
+  <section class="features">
+    <h2>Why Choose BoltDev?</h2>
+    <div class="feature-container">
+      <div class="feature">
+        ⚡ <h3>Fast</h3>
+        <p>Quick turnaround times so your business goes online fast.</p>
+      </div>
+      <div class="feature">
+        💰 <h3>Affordable</h3>
+        <p>High-quality websites at prices small businesses can afford.</p>
+      </div>
+      <div class="feature">
+        🎯 <h3>Professional</h3>
+        <p>Clean design and reliable code for a strong online presence.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA SECTION -->
-  <section class="cta fade-in">
-    <div class="container">
-      <h2>Ready to get started?</h2>
-      <p>Pick a plan today and let’s build your online presence together.</p>
-      <a href="contact.html" class="cta-btn">Contact Us</a>
-    </div>
-  </section>
-
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer>
     <p>© 2025 BoltDev – Fast. Affordable. Professional.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

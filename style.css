@@ -6,179 +6,209 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #f9fafb;
   color: #111;
 }
 
 /* NAVBAR */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  transition: background 0.3s, box-shadow 0.3s;
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .navbar.transparent {
   background: transparent;
 }
 
-.navbar.solid {
-  background: #fff;
+.navbar.scrolled {
+  background: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* LOGO */
 .logo-img {
   height: 40px;
-  display: none;
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  transition: opacity 0.4s ease-in-out; /* smooth fade */
+  opacity: 0;
+}
+
+.logo-white {
+  opacity: 1; /* default visible */
 }
 
 .logo-colored {
-  display: block;
+  opacity: 0; /* hidden at start */
 }
 
-.navbar.solid .logo-colored {
-  display: none;
+.navbar.scrolled .logo-white {
+  opacity: 0;
 }
 
-.navbar.solid .logo-black {
-  display: block;
+.navbar.scrolled .logo-colored {
+  opacity: 1;
 }
 
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 20px;
 }
-
+/* NAV LINKS */
 .nav-links a {
   text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  transition: color 0.3s;
+  color: white;
+  font-weight: bold;
+  transition: color 0.4s ease-in-out; /* smooth fade */
 }
 
-.navbar.solid .nav-links a {
+.navbar.scrolled .nav-links a {
   color: #111;
 }
 
 .cta-btn {
   background: #1E40AF;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
 }
 
 .cta-btn:hover {
-  background: #14B8A6;
+  background: #153d8a;
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(30, 64, 175, 0.55), rgba(30, 64, 175, 0.55)),
+    url("assets/hero-bg.jpg") no-repeat center center / cover;
+  background-attachment: fixed; /* ✅ Parallax effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.hero::before {
-  content: "";
+
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  background: rgba(30, 64, 175, 0.55); /* Darker blue filter */
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
-/* INTRO */
-.intro {
-  padding: 4rem 10%;
+/* FEATURES */
+.features {
+  padding: 60px 20px;
   text-align: center;
+  background: #f9f9f9;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.feature-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .feature {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex: 1;
+  max-width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* CTA SECTION */
-.cta {
-  background: #1E40AF;
-  color: #fff;
-  padding: 4rem 10%;
+/* Use this class for centered feature content */
+.feature-centered {
   text-align: center;
-}
-
-.cta h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cta p {
-  margin-bottom: 1.5rem;
 }
 
 /* FOOTER */
-.footer {
-  background: #111;
-  color: #fff;
+footer {
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 20px;
+  background: #111;
+  color: white;
 }
-
-/* ANIMATIONS */
-.fade-in {
+.logo-img {
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  transition: opacity 0.4s ease-in-out; /* smooth fade */
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
 }
 
-@keyframes fadeIn {
+.logo-white {
+  opacity: 1;
+}
+/* HERO CONTENT ANIMATION */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  opacity: 0;                     /* start invisible */
+  transform: translateY(20px);    /* start slightly lower */
+  animation: fadeUp 1.2s ease-out forwards;
+  animation-delay: 0.3s;          /* small delay for smooth entry */
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* FEATURE ANIMATIONS */
+.feature {
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.feature.show {
+  opacity: 1;
+  transform: translateY(0);
 }
