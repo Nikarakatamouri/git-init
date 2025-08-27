@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | BoltDev</title>
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar transparent" id="navbar">
+    <div class="logo">
+      <img src="assets/boltdev-logo-colored.png" alt="BoltDev Logo" class="logo-img logo-colored">
+      <img src="assets/boltdev-logo-black.png" alt="BoltDev Logo Black" class="logo-img logo-black">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="cta-btn">Get Started</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sub-hero parallax" style="background-image: url('assets/hero-bg.jpg');">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Choose the plan that fits your business best</p>
+    </div>
+  </section>
+
+  <!-- PRICING PLANS -->
+  <section class="intro fade-in">
+    <div class="container">
+      <h2>Pricing Plans</h2>
+      <p>Every plan includes hosting, security, and a professional setup.</p>
+
+      <div class="pricing-grid">
+
+        <!-- START -->
+        <div class="card">
+          <h3>Start</h3>
+          <p class="price">$400</p>
+          <a href="#contact-form" class="card-btn choose-tier" data-tier="Start">Choose Tier</a>
+          <ul class="feature-list">
+            <li>One-page website (mobile-friendly, modern design)</li>
+            <li>Google visibility setup (we add your business to Google so people can find you)</li>
+            <li>Simple logo design (1 concept with 1 revision)</li>
+            <li>Website text (3 short sections/articles)</li>
+            <li>Professional email (one address like you@yourbusiness.com)</li>
+            <li>Google Business Profile (map pin, hours, phone, photos)</li>
+            <li>Hosting for 1 year (with SSL security)</li>
+          </ul>
+        </div>
+
+        <!-- GROWTH -->
+        <div class="card featured">
+          <h3>Growth</h3>
+          <p class="price">$600</p>
+          <a href="#contact-form" class="card-btn choose-tier" data-tier="Growth">Choose Tier</a>
+          <ul class="feature-list">
+            <li>Four-page website (Home, About, Services, Contact)</li>
+            <li>Google visibility setup (titles, descriptions, Google indexing)</li>
+            <li>Simple logo design (1 concept with 1 revision)</li>
+            <li>Website text for all 4 pages (written and placed for you)</li>
+            <li>Professional email (one address like you@yourbusiness.com)</li>
+            <li>Google Business Profile (map pin, hours, phone, photos)</li>
+            <li>Facebook business page (branding, info, call-to-action)</li>
+            <li>Instagram business profile (branding, bio, link to your site)</li>
+            <li>Site maintenance for 1 year (small updates, backups, checks)</li>
+            <li>Hosting for 1 year (with SSL security)</li>
+          </ul>
+        </div>
+
+        <!-- PRO -->
+        <div class="card">
+          <h3>Pro</h3>
+          <p class="price">$1000+</p>
+          <a href="#contact-form" class="card-btn choose-tier" data-tier="Pro">Choose Tier</a>
+          <ul class="feature-list">
+            <li>Custom website with 8–10 pages (services, blog/news, gallery, FAQs, etc.)</li>
+            <li>Advanced feature: booking system, e-commerce shop (20 products), or real estate listings</li>
+            <li>Advanced Google setup (keywords, sitemap, speed optimization)</li>
+            <li>Analytics dashboard (Google Analytics with visitor tracking)</li>
+            <li>Brand kit (logo versions, colors, and fonts for social media)</li>
+            <li>Website text for all pages (clear copy written for your business)</li>
+            <li>Professional emails (up to 3 addresses @yourdomain)</li>
+            <li>Facebook business page and Instagram profile</li>
+            <li>Priority support and site maintenance for 1 year</li>
+            <li>Hosting for 1 year (with SSL security)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM INSIDE SERVICES -->
+  <section id="contact-form" class="fade-in">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="tier" id="selected-tier" placeholder="Selected Tier" readonly>
+        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 BoltDev – Fast. Affordable. Professional.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
