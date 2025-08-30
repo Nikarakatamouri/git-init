@@ -18,18 +18,7 @@ window.addEventListener("scroll", () => {
     if (rect.top < window.innerHeight - 100) {
       setTimeout(() => {
         feature.classList.add("show");
-      }, index * 200); // 200ms delay between each feature
+      }, index * 200);
     }
   });
 });
-
-// script.js
-window.addEventListener("scroll", function() {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-

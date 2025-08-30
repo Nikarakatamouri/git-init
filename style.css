@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 48px;   /* was ~15px 40px */
+  padding: 20px 60px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -37,16 +37,19 @@ body {
 /* Logo wrapper */
 .logo {
   position: relative;
-  width: 220px;   /* keeps layout stable */
-  height: 56px;   /* matches logo height */
+  width: 120px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Logos stacked */
 .logo-img {
-  height: 56px;   /* bigger logo */
+  height: 90px;
   position: absolute;
-  top: 12px;
-  left: 40px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   transition: opacity 0.4s ease-in-out;
   opacity: 0;
 }
@@ -63,107 +66,105 @@ body {
   opacity: 1;
 }
 
-/* Responsive logo for smaller screens */
-@media (max-width: 768px) {
-  .logo {
-    width: 170px;
-    height: 44px;
-  }
-  .logo-img {
-    height: 44px;
-    top: 10px;
-    left: 24px;
-  }
-  .navbar {
-    padding: 14px 20px;
-  }
+/* NAV LINKS */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: color 0.4s ease-in-out; /* smooth fade */
+  transition: color 0.4s ease-in-out;
+  font-size: 1.05rem;
 }
 
 .navbar.scrolled .nav-links a {
   color: #111;
 }
 
-/* CTA BUTTON with shine effect */
-.cta-btn {
+/* CTA BUTTONS */
+.cta-btn,
+.cta-btn-light {
   position: relative;
   display: inline-block;
-  background: #1E40AF;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
-  overflow: hidden; /* keeps shine inside */
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 6px 14px rgba(30, 64, 175, 0.22);
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-/* Shine circle effect */
-.cta-btn::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  opacity: 0;
-  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
-}
-
-/* Hover: expand shine */
-.cta-btn:hover::after {
-  width: 200%;
-  height: 200%;
-  opacity: 1;
+.cta-btn {
+  border: 2px solid #111827;
+  background: transparent;
+  color: #111827;
 }
 
 .cta-btn:hover {
-  background: #153d8a;
-  transform: translateY(-2px) scale(1.03);
+  background: #111827;
+  color: white;
 }
 
-.cta-btn:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.18);
+.cta-btn-light {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
 }
 
-.cta-btn:focus-visible {
-  outline: 3px solid #14B8A6;
-  outline-offset: 2px;
-  transition: outline-offset 0s;
+.cta-btn-light:hover {
+  background: white;
+  color: #111827;
+}
+
+.cta-btn::after,
+.cta-btn-light::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: all 0.6s;
+}
+
+.cta-btn:hover::after,
+.cta-btn-light:hover::after {
+  left: 125%;
 }
 
 /* HERO */
 .hero {
   position: relative;
   height: 100vh;
-  background: 
+  background:
     linear-gradient(rgba(30, 64, 175, 0.55), rgba(30, 64, 175, 0.55)),
     url("assets/hero-bg.jpg") no-repeat center center / cover;
-  background-attachment: fixed; /* ✅ Parallax effect */
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* fix iOS issue */
+  }
 }
 
 .hero-overlay {
@@ -172,22 +173,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(30, 64, 175, 0.55); /* Darker blue filter */
+  background: rgba(30, 64, 175, 0.55);
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
 }
 
 /* FEATURES */
@@ -217,24 +208,14 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Use this class for centered feature content */
-.feature-centered {
-  text-align: center;
-}
-
-/* FOOTER */
-.logo-white {
-  opacity: 1;
-}
-
 /* HERO CONTENT ANIMATION */
 .hero-content {
   position: relative;
   z-index: 1;
-  opacity: 0;                     /* start invisible */
-  transform: translateY(20px);    /* start slightly lower */
+  opacity: 0;
+  transform: translateY(20px);
   animation: fadeUp 1.2s ease-out forwards;
-  animation-delay: 0.3s;          /* small delay for smooth entry */
+  animation-delay: 0.3s;
 }
 
 @keyframes fadeUp {
@@ -250,7 +231,7 @@ body {
 
 /* FEATURE ANIMATIONS */
 .feature {
-  opacity: 0; 
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -260,22 +241,29 @@ body {
   transform: translateY(0);
 }
 
-/* Feature hover effect */
-.feature {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .feature:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+
+/* OVERRIDES: Bigger hero headline & subtext */
+.hero h1 {
+  font-size: 4rem;      /* bigger headline */
+  font-weight: 800;     /* extra bold */
+}
+
+.hero p {
+  font-size: 1.5rem;    /* bigger subtext */
+  margin-top: 15px;
+}
+
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background: #111;
-  color: rgb(252, 252, 252);
+  color: white;
 }
 
 footer p {
@@ -296,32 +284,209 @@ footer p {
   justify-content: center;
   width: 45px;
   height: 45px;
-  border-radius: 50%;         /* makes circle */
-  border: 2px solid #f4f4f4;  /* outline only */
-  color: #eff0f4;             /* icon color */
+  border-radius: 50%;
+  border: 2px solid #f4f4f4;
+  color: #eff0f4;
   font-size: 20px;
-  background: rgba(30, 64, 175, 0.55); 
+  background: rgba(30, 64, 175, 0.55);
   transition: all 0.3s ease;
 }
 
 .social-links a:hover {
   transform: scale(1.1);
-  border-color: #14B8A6;      /* teal outline on hover */
-  color: #14B8A6;             /* teal icon on hover */
+  border-color: #14B8A6;
+  color: #14B8A6;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
+/* OVERRIDE: Bigger nav link text */
+.nav-links a {
+  font-size: 1.2rem;    /* was ~1.05rem */
+  font-weight: 600;     /* slightly bolder */
+}
+
+/* ==============================
+   MISSION SECTION
+   ============================== */
+
+
+#mission {
+  padding: 100px 60px;
+}
+
+/* Shared grid for both blocks */
+.mission-block {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 60px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* Text column alignment */
+.mission-text {
+  max-width: 600px;   /* keeps text narrow */
+}
+
+.mission-text h2,
+.mission-text p {
+  font-size: 2.5rem;  /* bigger text */
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+/* Images */
+.mission-img {
+  max-width: 80%;   /* smaller images */
+  height: auto;
+}
+
+/* Light gradient (Block 1) — with fallback color */
+.mission-light {
+  /* Fallback so it’s never “white/blank” if gradients fail */
+  background-color: #E8FBF7; /* soft teal tint */
+  /* Gradient */
+  background-image: linear-gradient(135deg, #14B8A6 0%, #ffffff 100%);
+  border-radius: 12px;
+  color: #111;
+}
+
+/* Dark gradient (Block 2) — with fallback color */
+.mission-dark {
+  /* Fallback */
+  background-color: #1E40AF; /* brand navy */
+  /* Gradient */
+  background-image: linear-gradient(135deg, #1E40AF 0%, #14B8A6 100%);
+  border-radius: 12px;
+  color: #fff;}
+
+  /* Pull the text and image closer in the FIRST mission block only */
+#mission .mission-block.mission-light {
+  gap: 20px;              /* was 40px globally; tighter only for block 1 */
+}
+
+/* Make the image sit toward the text edge (not centered in its column) */
+#mission .mission-block.mission-light .mission-image {
+  display: flex;
+  justify-content: flex-start;
+}
+/* Optional micro-nudge if your PNG has internal padding */
+#mission .mission-block.mission-light .mission-img {
+  margin-left: -8px;   /* try -8px to -12px */
+}
+
+/* First mission block: tighter alignment */
+#mission .mission-block.mission-light {
+  grid-template-columns: 50% 50%; /* give text more room, image less */
+  gap: 110px; /* reduce space between text and image */
+}
+
+/* Ensure text hugs the right side of its column */
+#mission .mission-block.mission-light .mission-text {
+  margin-left: 200px;   /* pushes text closer to image */
+}
+
+/* Mission Block 1 CTA */
+.mission-block .cta-btn {
+  background: #1E40AF;   /* navy */
+  border: 2px solid #1E40AF;
   color: white;
 }
 
-.logo-img {
-  height: 40px;
-  position: absolute;
-  top: 15px;
-  left: 40px;
-  transition: opacity 0.4s ease-in-out; /* smooth fade */
-  opacity: 0;
+.mission-block .cta-btn:hover {
+  background: #111827;   /* darker navy */
+  border-color: #111827;
+}
+
+/* Mission Block 2 CTA */
+.mission-block .cta-btn-light {
+  background: #14B8A6;   /* teal */
+  border: 2px solid #14B8A6;
+  color: white;
+}
+
+.mission-block .cta-btn-light:hover {
+  background: #0f766e;   /* darker teal */
+  border-color: #0f766e;
+}
+
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .mission-block {
+    grid-template-columns: 1fr; /* stack */
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .mission-text {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .mission-text h2,
+  .mission-text p {
+    font-size: 1.8rem;
+  }
+
+  .mission-img {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+/* end mission section */
+
+
+/* ==============================
+   CTA BRAND COLORS
+   ============================== */
+
+/* Navbar CTA */
+.navbar .cta-btn {
+  background: #1E40AF;   /* navy */
+  border: 2px solid #1E40AF;
+  color: white;
+}
+
+.navbar .cta-btn:hover {
+  background: #111827;   /* darker navy */
+  border-color: #111827;
+}
+
+/* Hero CTA */
+.hero .cta-btn-light {
+  background: #14B8A6;   /* teal */
+  border: 2px solid #14B8A6;
+  color: white;
+}
+
+.hero .cta-btn-light:hover {
+  background: #0f766e;   /* darker teal */
+  border-color: #0f766e;
+}
+
+/* Mission Block 1 CTA (same as navbar) */
+.mission-block .cta-btn {
+  background: #1E40AF;
+  border: 2px solid #1E40AF;
+  color: white;
+}
+
+.mission-block .cta-btn:hover {
+  background: #111827;
+  border-color: #111827;
+}
+
+/* Mission Block 2 CTA (same as hero) */
+.mission-block .cta-btn-light {
+  background: #14B8A6;
+  border: 2px solid #14B8A6;
+  color: white;
+}
+
+.mission-block .cta-btn-light:hover {
+  background: #0f766e;
+  border-color: #0f766e;
 }
