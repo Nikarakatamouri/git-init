@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | BoltDev</title>
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/boltdev-icon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/boltdev-icon-180.png">
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar transparent" id="navbar">
+  <!-- Navbar -->
+  <header id="navbar" class="navbar transparent">
     <div class="logo">
-      <img src="assets/boltdev-logo-colored.png" alt="BoltDev Logo" class="logo-img logo-colored">
-      <img src="assets/boltdev-logo-black.png" alt="BoltDev Logo Black" class="logo-img logo-black">
+      <img src="assets/boltdev-logo-white.svg" alt="BoltDev Logo White" class="logo-img logo-white">
+      <img src="assets/boltdev-logo.svg" alt="BoltDev Logo Colored" class="logo-img logo-colored">
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
     <a href="contact.html" class="cta-btn">Get Started</a>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="sub-hero parallax" style="background-image: url('assets/hero-bg.jpg');">
+  <!-- Hero Section -->
+  <section class="hero small-hero parallax">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Our Services</h1>
       <p>Choose the plan that fits your business best</p>
     </div>
   </section>
 
-  <!-- PRICING PLANS -->
-  <section class="intro fade-in">
+  <!-- Pricing Plans Section -->
+  <section class="pricing-section">
     <div class="container">
       <h2>Pricing Plans</h2>
       <p>Every plan includes hosting, security, and a professional setup.</p>
@@ -42,82 +46,87 @@
 
         <!-- START -->
         <div class="card">
+          <i class="fas fa-rocket plan-icon"></i>
+          <span class="plan-badge">Get Online Fast</span>
           <h3>Start</h3>
           <p class="price">$400</p>
-          <a href="#contact-form" class="card-btn choose-tier" data-tier="Start">Choose Tier</a>
+          <a href="contact.html?plan=Start#form-end" class="card-btn choose-tier">Choose Tier</a>
           <ul class="feature-list">
-            <li>One-page website (mobile-friendly, modern design)</li>
-            <li>Google visibility setup (we add your business to Google so people can find you)</li>
-            <li>Simple logo design (1 concept with 1 revision)</li>
-            <li>Website text (3 short sections/articles)</li>
-            <li>Professional email (one address like you@yourbusiness.com)</li>
-            <li>Google Business Profile (map pin, hours, phone, photos)</li>
-            <li>Hosting for 1 year (with SSL security)</li>
+            <li><i class="fas fa-check"></i> One-page website (mobile-friendly, modern design)</li>
+            <li><i class="fas fa-check"></i> Google visibility setup</li>
+            <li><i class="fas fa-check"></i> Simple logo design</li>
+            <li><i class="fas fa-check"></i> Website text (3 short sections)</li>
+            <li><i class="fas fa-check"></i> Professional email</li>
+            <li><i class="fas fa-check"></i> Google Business Profile</li>
+            <li><i class="fas fa-check"></i> Hosting for 1 year (SSL included)</li>
           </ul>
         </div>
 
         <!-- GROWTH -->
-        <div class="card featured">
+        <div class="card">
+          <i class="fas fa-seedling plan-icon"></i>
+          <span class="plan-badge">Keep Growing Online</span>
           <h3>Growth</h3>
           <p class="price">$600</p>
-          <a href="#contact-form" class="card-btn choose-tier" data-tier="Growth">Choose Tier</a>
+          <a href="contact.html?plan=Growth#form-end" class="card-btn choose-tier">Choose Tier</a>
           <ul class="feature-list">
-            <li>Four-page website (Home, About, Services, Contact)</li>
-            <li>Google visibility setup (titles, descriptions, Google indexing)</li>
-            <li>Simple logo design (1 concept with 1 revision)</li>
-            <li>Website text for all 4 pages (written and placed for you)</li>
-            <li>Professional email (one address like you@yourbusiness.com)</li>
-            <li>Google Business Profile (map pin, hours, phone, photos)</li>
-            <li>Facebook business page (branding, info, call-to-action)</li>
-            <li>Instagram business profile (branding, bio, link to your site)</li>
-            <li>Site maintenance for 1 year (small updates, backups, checks)</li>
-            <li>Hosting for 1 year (with SSL security)</li>
+            <li><i class="fas fa-check"></i> Four-page website</li>
+            <li><i class="fas fa-check"></i> Google visibility setup</li>
+            <li><i class="fas fa-check"></i> Simple logo design</li>
+            <li><i class="fas fa-check"></i> Website text for 4 pages</li>
+            <li><i class="fas fa-check"></i> Professional email</li>
+            <li><i class="fas fa-check"></i> Google Business Profile</li>
+            <li><i class="fas fa-check"></i> Facebook business page</li>
+            <li><i class="fas fa-check"></i> Instagram business profile</li>
+            <li><i class="fas fa-check"></i> Site maintenance (1 year)</li>
+            <li><i class="fas fa-check"></i> Hosting for 1 year (SSL included)</li>
           </ul>
         </div>
 
         <!-- PRO -->
         <div class="card">
+          <i class="fas fa-trophy plan-icon"></i>
+          <span class="plan-badge">Everything You Need</span>
           <h3>Pro</h3>
           <p class="price">$1000+</p>
-          <a href="#contact-form" class="card-btn choose-tier" data-tier="Pro">Choose Tier</a>
+          <a href="contact.html?plan=Pro#form-end" class="card-btn choose-tier">Choose Tier</a>
           <ul class="feature-list">
-            <li>Custom website with 8–10 pages (services, blog/news, gallery, FAQs, etc.)</li>
-            <li>Advanced feature: booking system, e-commerce shop (20 products), or real estate listings</li>
-            <li>Advanced Google setup (keywords, sitemap, speed optimization)</li>
-            <li>Analytics dashboard (Google Analytics with visitor tracking)</li>
-            <li>Brand kit (logo versions, colors, and fonts for social media)</li>
-            <li>Website text for all pages (clear copy written for your business)</li>
-            <li>Professional emails (up to 3 addresses @yourdomain)</li>
-            <li>Facebook business page and Instagram profile</li>
-            <li>Priority support and site maintenance for 1 year</li>
-            <li>Hosting for 1 year (with SSL security)</li>
+            <li><i class="fas fa-check"></i> Custom website with 8–10 pages</li>
+            <li><i class="fas fa-check"></i> Advanced feature: booking, shop, or listings</li>
+            <li><i class="fas fa-check"></i> Advanced Google setup</li>
+            <li><i class="fas fa-check"></i> Analytics dashboard</li>
+            <li><i class="fas fa-check"></i> Brand kit (logo, colors, fonts)</li>
+            <li><i class="fas fa-check"></i> Website text for all pages</li>
+            <li><i class="fas fa-check"></i> Up to 3 professional emails</li>
+            <li><i class="fas fa-check"></i> Facebook + Instagram setup</li>
+            <li><i class="fas fa-check"></i> Priority support & maintenance</li>
+            <li><i class="fas fa-check"></i> Hosting for 1 year (SSL included)</li>
           </ul>
         </div>
 
-      </div>
-    </div>
-  </section>
+      </div> <!-- end pricing-grid -->
+    </div> <!-- end container -->
+  </section> <!-- end pricing-section -->
 
-  <!-- CONTACT FORM INSIDE SERVICES -->
-  <section id="contact-form" class="fade-in">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="tier" id="selected-tier" placeholder="Selected Tier" readonly>
-        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+  <!-- Footer (moved OUTSIDE container + section) -->
+  <footer>
+    <p>© 2025 BoltDev. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="mailto:hello@boltdev.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/yourprofile" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 BoltDev – Fast. Affordable. Professional.</p>
   </footer>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>

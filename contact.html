@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BoltDev - Contact</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | BoltDev</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/boltdev-icon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/boltdev-icon-180.png">
 </head>
+
 <body>
   <!-- Navbar -->
-  <header id="navbar" class="navbar">
+  <header id="navbar" class="navbar transparent">
     <div class="logo">
-      <img src="assets/boltdev-logo.svg" alt="BoltDev Logo" class="logo-img logo-colored">
       <img src="assets/boltdev-logo-white.svg" alt="BoltDev Logo White" class="logo-img logo-white">
-      <img src="assets/boltdev-logo-black.svg" alt="BoltDev Logo Black" class="logo-img logo-black">
-      <p class="slogan">Fast. Affordable. Professional.</p>
+      <img src="assets/boltdev-logo.svg" alt="BoltDev Logo Colored" class="logo-img logo-colored">
     </div>
     <nav>
       <ul class="nav-links">
@@ -29,32 +29,111 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="sub-hero parallax">
+  <section class="hero small-hero parallax">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Contact Us</h1>
-      <p>Let’s build your next website together</p>
+      <p>Fast response. Clear pricing. Let’s start your website today.</p>
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section class="intro fade-in">
+  <!-- Intro Section -->
+  <section id="contact-form" class="intro fade-in">
     <div class="container">
       <h2>Get in Touch</h2>
-      <p>Fill out the form below and we’ll get back to you as soon as possible.</p>
+      <p>We usually reply within 24 hours. Whether you prefer a call, an email, or a quick message, choose the way that works best for you.</p>
+    </div>
+  </section>
 
+  <!-- Contact Cards Section -->
+  <section class="contact-cards">
+    <h2>Ways to Reach Us</h2>
+    <div class="contact-cards-container">
+
+      <!-- Phone -->
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Call Us</h3>
+        <p>Get quick help directly by phone.</p>
+        <a href="tel:+1234567890" class="card-btn">+1 (234) 567-890</a>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <p>We reply within 24 hours to all emails.</p>
+        <a href="mailto:hello@boltdev.com" class="card-btn">Send Email</a>
+      </div>
+
+      <!-- Message -->
+      <div class="contact-card">
+        <i class="fas fa-comments"></i>
+        <h3>Message Us</h3>
+        <p>Quick replies via WhatsApp or Messenger.</p>
+        <a href="#" class="card-btn">Start Chat</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="intro fade-in">
+    <div class="container">
+      <h2>Send Us a Message</h2>
       <form class="contact-form">
+        <!-- Selected Plan (only appears if user comes from Services page) -->
+        <input type="text" id="selected-plan" name="plan" placeholder="Selected Plan" readonly style="display:none;">
+
+        <!-- Standard fields -->
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="Your Phone (optional)">
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+        <!-- Checkbox -->
+        <label>
+          <input type="checkbox" required> I agree to be contacted by BoltDev
+        </label>
+
+        <!-- Submit -->
         <button type="submit">Send Message</button>
       </form>
+
+      <!-- Anchor at bottom -->
+    <div id="form-end"></div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 BoltDev – Fast. Affordable. Professional.</p>
+  <footer>
+    <p>© 2025 BoltDev. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="mailto:hello@boltdev.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/yourprofile" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const plan = urlParams.get('plan');
+    const planField = document.getElementById('selected-plan');
+
+    if (plan) {
+      planField.value = plan;
+      planField.style.display = 'block'; // show only if plan is chosen
+    }
+  </script>
 
   <script src="script.js"></script>
 </body>
