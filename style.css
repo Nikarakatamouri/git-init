@@ -30,11 +30,11 @@ body {
 }
 
 .navbar.scrolled {
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo wrapper */
+/* Logo (two stacked, same spot) */
 .logo {
   position: relative;
   width: 120px;
@@ -50,7 +50,7 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s;
   opacity: 0;
 }
 
@@ -66,7 +66,7 @@ body {
   opacity: 1;
 }
 
-/* NAV LINKS */
+/* Nav links */
 nav {
   flex: 1;
   display: flex;
@@ -82,17 +82,17 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.4s ease-in-out;
-  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.4s;
+  font-size: 1.2rem;
 }
 
 .navbar.scrolled .nav-links a {
   color: #111;
 }
 
-/* CTA BUTTONS */
+/* CTA buttons */
 .cta-btn,
 .cta-btn-light {
   position: relative;
@@ -104,7 +104,7 @@ nav {
   cursor: pointer;
   text-decoration: none;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .cta-btn {
@@ -115,17 +115,17 @@ nav {
 
 .cta-btn:hover {
   background: #111827;
-  color: white;
+  color: #fff;
 }
 
 .cta-btn-light {
-  border: 2px solid white;
+  border: 2px solid #fff;
   background: transparent;
-  color: white;
+  color: #fff;
 }
 
 .cta-btn-light:hover {
-  background: white;
+  background: #fff;
   color: #111827;
 }
 
@@ -137,7 +137,7 @@ nav {
   left: -75%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
   transition: all 0.6s;
 }
 
@@ -158,64 +158,40 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
   .hero {
-    background-attachment: scroll; /* fix iOS issue */
+    background-attachment: scroll;
   }
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(30, 64, 175, 0.55);
+  z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-}
-
-/* FEATURES */
-.features {
-  padding: 60px 20px;
-  text-align: center;
-  background: #f9f9f9;
-}
-
-.features h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.feature-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.feature {
-  flex: 1;
-  max-width: 300px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* HERO CONTENT ANIMATION */
-.hero-content {
-  position: relative;
-  z-index: 1;
+  color: #fff;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 1.2s ease-out forwards;
   animation-delay: 0.3s;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: 15px;
 }
 
 @keyframes fadeUp {
@@ -229,12 +205,41 @@ nav {
   }
 }
 
-/* FEATURE ANIMATIONS */
+/* FEATURES */
+.features {
+  width: 100%;
+  padding: 80px 0;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.feature-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .feature {
+  flex: 1;
+  max-width: 10000px;
+  background: #edf6f9; /* your new color */
+  padding: 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* stronger shadow */
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s, transform 0.8s;
 }
+
+
 
 .feature.show {
   opacity: 1;
@@ -246,16 +251,147 @@ nav {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* OVERRIDES: Bigger hero headline & subtext */
-.hero h1 {
-  font-size: 4rem;      /* bigger headline */
-  font-weight: 800;     /* extra bold */
+.features .cta-btn {
+  margin-top: 40px;
+  display: inline-block;
+}
+.features .cta-btn {
+  margin-top: 40px;
+  display: inline-block;
+  background: #1E40AF;   /* strong blue */
+  border: 2px solid #1E40AF;
+  color: #fff;
 }
 
-.hero p {
-  font-size: 1.5rem;    /* bigger subtext */
-  margin-top: 15px;
+.features .cta-btn:hover {
+  background: #111827;   /* darker hover */
+  border-color: #111827;
+  color: #fff;
 }
+.feature h3 {
+  font-size: 1.6rem;   /* bigger title (was ~1.2rem by browser default) */
+  margin: 10px 0;
+}
+
+.feature p {
+  font-size: 1.1rem;   /* slightly larger description */
+  line-height: 1.6;
+}
+
+.feature {
+  font-size: 1.4rem;   /* this affects the emoji icons size */
+}
+
+
+/* ------------------------------
+   MISSION (two full-width bands)
+   ------------------------------ */
+#mission {
+  width: 100%;
+}
+
+.mission-light {
+  width: 100%;
+  background: linear-gradient(135deg, #14B8A6 0%, #ffffff 100%);
+  color: #111;
+}
+
+.mission-dark {
+  width: 100%;
+  background: linear-gradient(135deg, #1E40AF 0%, #14B8A6 100%);
+  color: #fff;
+}
+
+.mission-block {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 180px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Independent size + movement */
+.mission-text {
+  flex: 0 0 var(--text-width, auto);
+  text-align: var(--text-align, left);
+  position: relative;
+  left: var(--text-move-x, 0);
+  top: var(--text-move-y, 0);
+}
+
+.mission-image {
+  flex: 0 0 var(--image-width, auto);
+  text-align: var(--image-align, right);
+  position: relative;
+  left: var(--image-move-x, 0);
+  top: var(--image-move-y, 0);
+}
+
+.mission-text h2,
+.mission-text p {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.mission-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mission-block .cta-btn {
+  background: #1E40AF;
+  border: 2px solid #1E40AF;
+  color: #fff;
+}
+
+.mission-block .cta-btn:hover {
+  background: #111827;
+  border-color: #111827;
+}
+
+.mission-block .cta-btn-light {
+  background: #14B8A6;
+  border: 2px solid #14B8A6;
+  color: #fff;
+}
+
+.mission-block .cta-btn-light:hover {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .mission-block {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .mission-text,
+  .mission-image {
+    flex: 0 0 auto;
+    width: 100% !important;
+    text-align: center !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+
+  .mission-text h2,
+  .mission-text p {
+    font-size: 1.8rem;
+  }
+
+  .mission-img {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+
+
 
 
 /* FOOTER */
@@ -263,7 +399,7 @@ footer {
   text-align: center;
   padding: 20px;
   background: #111;
-  color: white;
+  color: #fff;
 }
 
 footer p {
@@ -289,7 +425,7 @@ footer p {
   color: #eff0f4;
   font-size: 20px;
   background: rgba(30, 64, 175, 0.55);
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .social-links a:hover {
@@ -297,196 +433,183 @@ footer p {
   border-color: #14B8A6;
   color: #14B8A6;
 }
-
-/* OVERRIDE: Bigger nav link text */
-.nav-links a {
-  font-size: 1.2rem;    /* was ~1.05rem */
-  font-weight: 600;     /* slightly bolder */
+.social-links a i {
+  color: #fff; /* make icons visible again */
+  font-size: 18px;
 }
 
-/* ==============================
-   MISSION SECTION
-   ============================== */
-
-
-#mission {
-  padding: 100px 60px;
+.social-links a:hover i {
+  color: #14B8A6; /* teal hover */
 }
 
-/* Shared grid for both blocks */
-.mission-block {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  align-items: center;
-  gap: 40px;
-  padding: 80px 60px;
-  border-radius: 12px;
-  margin-bottom: 40px;
+.social-links a i {
+  color: #fff;          /* visible icon color */
+  font-size: 18px;      /* consistent size inside the circle */
+  line-height: 1;       /* fixes vertical centering issue */
 }
 
-/* Text column alignment */
-.mission-text {
-  max-width: 600px;   /* keeps text narrow */
+.social-links a:hover i {
+  color: #14B8A6;       /* teal hover */
 }
 
-.mission-text h2,
-.mission-text p {
-  font-size: 2.5rem;  /* bigger text */
+
+/* Small hero variant */
+.small-hero {
+  height: 50vh; /* half height compared to full hero */
+  background:
+    linear-gradient(rgba(30, 64, 175, 0.55), rgba(30, 64, 175, 0.55)),
+    url("assets/hero-bg.jpg") no-repeat center center / cover;
+  background-attachment: fixed;
+}
+
+/* Intro/About section */
+.intro {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f0f6ff; /* brand light blue instead of plain white */
+}
+
+.intro h2 {
+  font-size: 2.6rem;   /* was 2.2rem → now bigger */
+  margin-bottom: 25px; /* little extra breathing space */
+  font-weight: 800;    /* makes it bolder/stronger */
+  color: #111827;      /* a clean dark for contrast */
+}
+
+
+/* About section paragraphs */
+.intro p {
+  font-size: 1.3rem;   /* bigger paragraph text */
+  line-height: 1.8;    /* more space between lines for readability */
+  max-width: 900px;    /* keeps it nicely centered, not too wide */
+  margin: 15px auto;
+  text-align: center;
+}
+
+
+.team {
+  margin-top: 60px;
+  margin-bottom: 100px; /* gap before footer */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-member {
+  position: relative;    /* icons move inside this */
+  margin-bottom: 80px;   /* space between members */
+  text-align: center;    /* keeps title + paragraph centered */
+}
+
+.team-icon i {
+  font-size: var(--icon-size, 5rem);   /* 👈 independent size */
+  color: #1E40AF;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%)
+             translateX(var(--icon-move-x, 0))
+             translateY(var(--icon-move-y, 0)); /* 👈 independent x/y */
+}
+
+
+.team-info {
+  max-width: 700px;
+  margin: 0 auto;         /* center the whole text block on the page */
+}
+
+.team-info h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
   font-weight: 700;
-  margin-bottom: 25px;
-  line-height: 1.3;
+  color: #1E40AF;
 }
 
-/* Images */
-.mission-img {
-  max-width: 80%;   /* smaller images */
-  height: auto;
+.team-info p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0 auto;
+  text-align: center;     /* center paragraph lines */
 }
 
-/* Light gradient (Block 1) — with fallback color */
-.mission-light {
-  /* Fallback so it’s never “white/blank” if gradients fail */
-  background-color: #E8FBF7; /* soft teal tint */
-  /* Gradient */
-  background-image: linear-gradient(135deg, #14B8A6 0%, #ffffff 100%);
-  border-radius: 12px;
-  color: #111;
+/* Mobile: stack nicely and reset icon offsets */
+@media (max-width: 768px) {
+  .team-icon i {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+  }
 }
 
-/* Dark gradient (Block 2) — with fallback color */
-.mission-dark {
-  /* Fallback */
-  background-color: #1E40AF; /* brand navy */
-  /* Gradient */
-  background-image: linear-gradient(135deg, #1E40AF 0%, #14B8A6 100%);
-  border-radius: 12px;
-  color: #fff;}
-
-  /* Pull the text and image closer in the FIRST mission block only */
-#mission .mission-block.mission-light {
-  gap: 20px;              /* was 40px globally; tighter only for block 1 */
+.about-cta {
+  text-align: center;
+  margin: 60px 0;   /* spacing before footer */
 }
 
-/* Make the image sit toward the text edge (not centered in its column) */
-#mission .mission-block.mission-light .mission-image {
+.about-cta .cta-btn {
+  background: #1E40AF;   /* BoltDev blue */
+  border: 2px solid #1E40AF;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 16px 40px;   /* slightly bigger than nav buttons */
+}
+
+.about-cta .cta-btn:hover {
+  background: #111827;  /* dark hover */
+  border-color: #111827;
+}
+
+/* WHO WE’RE BUILT FOR */
+.built-for {
+  background: #1E40AF;   /* brand blue */
+  color: #fff;
+  text-align: center;
+  padding: 250px 20px;
+}
+
+.built-for h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+.built-for-container {
   display: flex;
-  justify-content: flex-start;
-}
-/* Optional micro-nudge if your PNG has internal padding */
-#mission .mission-block.mission-light .mission-img {
-  margin-left: -8px;   /* try -8px to -12px */
-}
-
-/* First mission block: tighter alignment */
-#mission .mission-block.mission-light {
-  grid-template-columns: 50% 50%; /* give text more room, image less */
-  gap: 110px; /* reduce space between text and image */
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Ensure text hugs the right side of its column */
-#mission .mission-block.mission-light .mission-text {
-  margin-left: 200px;   /* pushes text closer to image */
+.built-for-item {
+  background: rgba(255, 255, 255, 0.1);  /* subtle card feel */
+  padding: 30px 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Mission Block 1 CTA */
-.mission-block .cta-btn {
-  background: #1E40AF;   /* navy */
-  border: 2px solid #1E40AF;
-  color: white;
+.built-for-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
 }
 
-.mission-block .cta-btn:hover {
-  background: #111827;   /* darker navy */
-  border-color: #111827;
+.built-for-item i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #14B8A6;   /* teal accent for icons */
 }
 
-/* Mission Block 2 CTA */
-.mission-block .cta-btn-light {
-  background: #14B8A6;   /* teal */
-  border: 2px solid #14B8A6;
-  color: white;
+.built-for-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
 }
 
-.mission-block .cta-btn-light:hover {
-  background: #0f766e;   /* darker teal */
-  border-color: #0f766e;
-}
-
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .mission-block {
-    grid-template-columns: 1fr; /* stack */
-    text-align: center;
-    padding: 60px 30px;
-  }
-
-  .mission-text {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .mission-text h2,
-  .mission-text p {
-    font-size: 1.8rem;
-  }
-
-  .mission-img {
-    max-width: 85%;
-    margin: 0 auto;
-  }
-}
-/* end mission section */
-
-
-/* ==============================
-   CTA BRAND COLORS
-   ============================== */
-
-/* Navbar CTA */
-.navbar .cta-btn {
-  background: #1E40AF;   /* navy */
-  border: 2px solid #1E40AF;
-  color: white;
-}
-
-.navbar .cta-btn:hover {
-  background: #111827;   /* darker navy */
-  border-color: #111827;
-}
-
-/* Hero CTA */
-.hero .cta-btn-light {
-  background: #14B8A6;   /* teal */
-  border: 2px solid #14B8A6;
-  color: white;
-}
-
-.hero .cta-btn-light:hover {
-  background: #0f766e;   /* darker teal */
-  border-color: #0f766e;
-}
-
-/* Mission Block 1 CTA (same as navbar) */
-.mission-block .cta-btn {
-  background: #1E40AF;
-  border: 2px solid #1E40AF;
-  color: white;
-}
-
-.mission-block .cta-btn:hover {
-  background: #111827;
-  border-color: #111827;
-}
-
-/* Mission Block 2 CTA (same as hero) */
-.mission-block .cta-btn-light {
-  background: #14B8A6;
-  border: 2px solid #14B8A6;
-  color: white;
-}
-
-.mission-block .cta-btn-light:hover {
-  background: #0f766e;
-  border-color: #0f766e;
+.built-for-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BoltDev</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -38,50 +38,91 @@
     </div>
   </section>
 
-<!-- MISSION SECTION -->
+<!-- MISSION (two full-width, colored bands) -->
 <section id="mission">
-  <!-- Block 1 -->
-  <div class="mission-block mission-light">
-    <div class="mission-text">
-      <h2>Our Mission: A Website for Every Professional</h2>
-      <a href="contact.html" class="cta-btn">Start My Website Today</a>
-    </div>
-    <div class="mission-image">
-      <img src="assets/mission-professional.png" alt="Professional at laptop" class="mission-img">
+  <!-- Band 1 (light) -->
+  <div class="mission-light">
+    <div class="mission-block" 
+         style="--text-width: 600px; --image-width: 800px;
+                --text-move-x: -150px; --text-move-y: 0;
+                --image-move-x: 50px; --image-move-y: 30px;">
+      <div class="mission-text">
+        <h2>Our Mission: A Website for Every Professional</h2>
+        <a href="contact.html" class="cta-btn">Start My Website Today</a>
+      </div>
+      <div class="mission-image">
+        <img src="assets/mission-professional.png" alt="Professional at laptop" class="mission-img mission-img-1">
+      </div>
     </div>
   </div>
 
-  <!-- Block 2 -->
-  <div class="mission-block mission-dark">
-    <div class="mission-image">
-      <img src="assets/mission-devices.png" alt="Devices illustration" class="mission-img">
-    </div>
-    <div class="mission-text">
-      <p>We make websites fast, affordable, and professional — so you can focus on your work, while your online presence works for you.</p>
-      <a href="services.html" class="cta-btn-light">See Plans & Pricing</a>
+  <!-- Band 2 (dark) -->
+  <div class="mission-dark">
+    <div class="mission-block" 
+         style="--text-width: 600px; --image-width: 800px;
+                --text-move-x: -100px; --text-move-y: 20px;
+                --image-move-x: -300px; --image-move-y: -10px;">
+      <div class="mission-image">
+        <img src="assets/mission-devices.png" alt="Devices illustration" class="mission-img mission-img-2">
+      </div>
+      <div class="mission-text">
+        <p>We make websites Fast, Affordable, and Professional — so you can focus on your business.</p>
+        <a href="services.html" class="cta-btn-light">See Plans & Pricing</a>
+      </div>
     </div>
   </div>
 </section>
-<!---End of Mission Section--->
+
+<!-- WHO WE’RE BUILT FOR -->
+<section class="built-for">
+  <h2>Who We’re Built For</h2>
+  <div class="built-for-container">
+
+    <div class="built-for-item">
+      <i class="fas fa-leaf"></i>
+      <h3>Lawn Care & Cleaners</h3>
+      <p>We create simple one-page sites that make it easy for customers to call, book, and trust your services — helping you get more local jobs without wasting time.</p>
+    </div>
+
+    <div class="built-for-item">
+      <i class="fas fa-wrench"></i>
+      <h3>Plumbers & Electricians</h3>
+      <p>Your website should work as hard as you do. We build professional, reliable sites that show customers you’re dependable, so you get more calls and steady work.</p>
+    </div>
+
+    <div class="built-for-item">
+      <i class="fas fa-paint-roller"></i>
+      <h3>House Painters</h3>
+      <p>Show off your work with photo galleries and clean layouts. A professional site helps you win more painting jobs and showcase quality results.</p>
+    </div>
+
+  </div>
+</section>
+
+
 
   <!-- WHY CHOOSE US -->
   <section class="features">
-    <h2>Why Choose BoltDev?</h2>
-    <div class="feature-container">
-      <div class="feature">
-        ⚡ <h3>Fast</h3>
-        <p>Quick turnaround times so your business goes online fast.</p>
-      </div>
-      <div class="feature">
-        💰 <h3>Affordable</h3>
-        <p>High-quality websites at prices small businesses can afford.</p>
-      </div>
-      <div class="feature">
-        🎯 <h3>Professional</h3>
-        <p>Clean design and reliable code for a strong online presence.</p>
-      </div>
+  <h2>Why Choose BoltDev?</h2>
+  <div class="feature-container">
+    <div class="feature">
+      ⚡ <h3>Fast</h3>
+      <p>Quick turnaround times so your business goes online fast.</p>
     </div>
-  </section>
+    <div class="feature">
+      💰 <h3>Affordable</h3>
+      <p>High-quality websites at prices small businesses can afford.</p>
+    </div>
+    <div class="feature">
+      🎯 <h3>Professional</h3>
+      <p>Clean design and reliable code for a strong online presence.</p>
+    </div>
+  </div>
+
+  <!-- CTA under cards -->
+  <a href="services.html" class="cta-btn">Get Started Today</a>
+</section>
+
 
   <!-- FOOTER -->
   <footer>

@@ -4,18 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BoltDev - About Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/boltdev-icon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/boltdev-icon-180.png">
 </head>
 <body>
   <!-- Navbar -->
-  <header id="navbar" class="navbar">
+  <header id="navbar" class="navbar transparent">
     <div class="logo">
-      <img src="assets/boltdev-logo.svg" alt="BoltDev Logo" class="logo-img logo-colored">
       <img src="assets/boltdev-logo-white.svg" alt="BoltDev Logo White" class="logo-img logo-white">
-      <img src="assets/boltdev-logo-black.svg" alt="BoltDev Logo Black" class="logo-img logo-black">
-      <p class="slogan">Fast. Affordable. Professional.</p>
+      <img src="assets/boltdev-logo.svg" alt="BoltDev Logo Colored" class="logo-img logo-colored">
     </div>
     <nav>
       <ul class="nav-links">
@@ -30,31 +29,89 @@
 
   <!-- Hero Section -->
   <section class="hero small-hero parallax">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>About Us</h1>
-      <p>Meet the team behind BoltDev</p>
+      <p>The people behind BoltDev</p>
     </div>
   </section>
 
-  <!-- About Content -->
-  <section class="intro fade-in">
-    <div class="container">
-      <h2>Who We Are</h2>
-      <p>At BoltDev, we’re a small but powerful team, passionate about helping businesses in the USA get online quickly, affordably, and professionally.</p>
+<!-- About Content -->
+<section class="intro fade-in">
+  <div class="container">
+    <h2>Who We Are</h2>
+    <p>At <strong>BoltDev</strong>, we know small businesses don’t have time or budget to waste. That’s why we build <strong>affordable websites</strong> that help you <strong>get more customers</strong> and grow your business — without the high agency price tag.</p>
 
-      <div class="team">
-        <h3>Greg – Sales & Development</h3>
-        <p>Greg is the voice of BoltDev. With a strong background in sales and a growing skillset in web development, he bridges the gap between clients’ needs and modern digital solutions.</p>
+    <p>Our process is <strong>simple and stress-free</strong>: clear pricing, quick delivery, and websites that work on any device. We also make sure your business <strong>shows up on Google when people search for services like yours</strong>, so you can be found by more customers.</p>
 
-        <h3>Jim – Developer</h3>
-        <p>Jim is the technical backbone of BoltDev. With strong knowledge of HTML, CSS, and JavaScript, he focuses on clean code, responsive design, and reliable performance.</p>
-      </div>
+    <p>And because a website should keep working long after it’s built, we also offer <strong>support plans</strong> — from keeping your site online, to updates, to promoting your business — so you never have to worry about the tech side. When your business grows, so does ours.</p>
+  </div>
+</section>
+
+<!-- Team Section -->
+<div class="team">
+
+  <!-- Greg -->
+  <div class="team-member" 
+       style="--icon-move-x: -600px; --icon-move-y: 1px; --icon-size: 7rem;">
+    <div class="team-icon">
+      <i class="fas fa-laptop-code"></i>
     </div>
-  </section>
+    <div class="team-info">
+      <h3>Greg – Sales & Frontend Web Design</h3>
+      <p>Greg connects directly with clients to understand their needs, while also creating modern, user-friendly web designs that make businesses shine online.</p>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 BoltDev – Fast. Affordable. Professional.</p>
+  <!-- Jim -->
+  <div class="team-member" 
+       style="--icon-move-x: 600px; --icon-move-y: 10px; --icon-size: 7rem;">
+    <div class="team-icon">
+      <i class="fas fa-code"></i>
+    </div>
+    <div class="team-info">
+      <h3>Jim – Developer</h3>
+      <p>Jim ensures every site is built on clean, reliable code. He focuses on speed, responsiveness, and performance so clients’ websites run smoothly on all devices.</p>
+    </div>
+  </div>
+
+  <!-- Sol -->
+  <div class="team-member" 
+       style="--icon-move-x: -590px; --icon-move-y: 10px; --icon-size: 7rem;">
+    <div class="team-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="team-info">
+      <h3>Sol – Marketing Expert</h3>
+      <p>Sol helps businesses grow by improving their visibility online and crafting strategies that attract the right customers through simple, effective marketing.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Call-to-Action -->
+<div class="about-cta">
+  <a href="contact.html" class="cta-btn">Let’s Build Your Website</a>
+</div>
+
+
+  <!-- Footer (same as Home) -->
+  <footer>
+    <p>© 2025 BoltDev. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="mailto:hello@boltdev.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/yourprofile" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
